@@ -6,6 +6,20 @@ The project covers **data ingestion**, **feature engineering**, and **MLflow exp
 
 ---
 
+## 🛠️ Tech Stack
+
+- **Databricks Notebooks** – end-to-end ML development environment  
+- **Unity Catalog** – governed storage for the raw Delta table  
+- **Spark** – distributed data loading from Delta  
+- **Pandas** – local feature preparation & train/test split  
+- **Scikit-learn** – Logistic Regression & Random Forest models  
+- **XGBoost** – optimized gradient boosting model  
+- **MLflow** – experiment tracking (metrics, params, artifacts, signatures)  
+- **Delta Lake** – ingestion storage for creditcard_raw  
+- **Python 3.12** – environment used on Databricks Free Edition  
+
+---
+
 ## 🚀 Project Overview
 
 ### ✔ Key Features
@@ -35,6 +49,7 @@ Stored as Unity Catalog table:
 ```
 workspace.ml.creditcard_raw
 ```
+
 ---
 
 ## 🧱 Pipeline Architecture
@@ -98,7 +113,10 @@ Databricks_MLflow_Pipeline/
 
 ```
 ```
-📌 ## Results Summary
+
+---
+
+## 📌 Results Summary
 
 | Model               | Performance |
 |---------------------|------------|
@@ -109,22 +127,21 @@ Databricks_MLflow_Pipeline/
 
 Full metrics visible in MLflow experiment runs.
 
-▶️ How to Run
+---
 
-  . Import 01_credit_fraud_mlflow.dbc into Databricks
+## ▶️ How to Run
 
-  . Attach a cluster (ensure xgboost is installed)
+  - Import 01_credit_fraud_mlflow.dbc into Databricks
+  - Attach a cluster (ensure xgboost is installed)
+  - Run all notebook cells
+  - Open the MLflow experiment panel to review runs
 
-  . Run all notebook cells
+---
 
-  . Open the MLflow experiment panel to review runs
-
-📷 Screenshots
+## 📷 Screenshots
 
 All supporting visuals are available in the screenshots/ folder:
 
-  . Dataset preview
-
-  . MLflow run list
-
-  . Run details for LR, RF, XGBoost
+  - Dataset preview
+  - MLflow run list
+  - Run details for LR, RF, XGBoost
