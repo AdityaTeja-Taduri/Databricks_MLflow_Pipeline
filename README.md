@@ -40,50 +40,39 @@ workspace.ml.creditcard_raw
 ## 🧱 Pipeline Architecture
 
 1️⃣ Data Ingestion
-  . Upload CSV via *Create or Modify Table*
-  . Store as managed Delta table
-  . Load with Spark:
+  - Upload CSV via *Create or Modify Table*
+  - Store as managed Delta table
+  - Load with Spark:
   ```python
   df_raw = spark.table("workspace.ml.creditcard_raw")
   ```
 
 2️⃣ Feature Prep
 
-  . Convert Spark DataFrame → pandas
-
-  . Define features (X) and target (y)
-
-  . Use stratified train_test_split
+  - Convert Spark DataFrame → pandas
+  - Define features (X) and target (y)
+  - Use stratified train_test_split
 
 3️⃣ Model Training
 
 Models trained:
 
-  . Logistic Regression (baseline)
-
-  . Random Forest (tree ensemble)
-
-  . XGBoost (optimized boosting)
+  - Logistic Regression (baseline)
+  - Random Forest (tree ensemble)
+  - XGBoost (optimized boosting)
 
 4️⃣ MLflow Tracking
 
 Each run logs:
 
-  . Accuracy
-
-  . Precision
-
-  . Recall
-
-  . F1 Score
-
-  . AUC
-
-  . Hyperparameters
-
-  . Model binary
-
-  . Signature + Input example
+  - Accuracy
+  - Precision
+  - Recall
+  - F1 Score
+  - AUC
+  - Hyperparameters
+  - Model binary
+  - Signature + Input example
 
 5️⃣ Model Comparison
 
@@ -108,12 +97,15 @@ Databricks_MLflow_Pipeline/
 └── README.md
 
 ```
+```
+📌 ## Results Summary
 
-📌 Results Summary
-Model	                    Performance
-Logistic Regression	      Good precision, lower recall
-Random Forest	            Stronger recall, better AUC
-XGBoost	                  ⭐ Best overall model
+| Model               | Performance |
+|---------------------|------------|
+| Logistic Regression | Good precision, lower recall |
+| Random Forest       | Stronger recall, better AUC |
+| XGBoost             | ⭐ Best overall model |
+```
 
 Full metrics visible in MLflow experiment runs.
 
